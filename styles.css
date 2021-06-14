@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-image: url("images/bckg.jpeg");
+  background-size: cover;
 }
 .grid {
   height: 560px;
@@ -9,7 +10,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  top: 200;
+  top: 100;
   right: 150;
   background: RGBA(255, 255, 255, 0.1);
   background: radial-gradient(
@@ -26,7 +27,77 @@ body {
 }
 
 .score-board {
+  animation: anim 30s infinite;
+  background: RGBA(255, 255, 255, 0.1);
+  background: radial-gradient(
+    circle,
+    rgba(247, 245, 246, 0.9) 0%,
+    rgba(221, 224, 230, 0.9) 100%
+  );
+  filter: drop-shadow(0 0 3vmin Thistle) drop-shadow(0 5vmin 4vmin Orchid)
+    drop-shadow(2vmin -2vmin 15vmin MediumSlateBlue)
+    drop-shadow(0 0 7vmin MediumOrchid);
+  font-family: "Cherry Cream Soda", cursive;
   position: absolute;
-  top: 100;
-  left: 500;
+  top: 200;
+  left: 200;
+  min-width: 300px;
+  min-height: 300px;
+  text-align: center;
+}
+
+h1 {
+  padding-top: 50px;
+  color: #e93b81;
+}
+
+@keyframes anim {
+  0%,
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
+    box-shadow: 0 -2vmin 3vmin LightPink inset, 0 1vmin 4vmin MediumPurple inset,
+      0 -2vmin 7vmin purple inset;
+  }
+
+  10% {
+    border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+  }
+
+  20% {
+    border-radius: 67% 33% 47% 53% / 37% 20% 80% 63%;
+  }
+
+  30% {
+    border-radius: 39% 61% 47% 53% / 37% 40% 60% 63%;
+    box-shadow: -1vmin -2vmin 3vmin LightPink inset,
+      -1vmin -2vmin 4vmin MediumPurple inset, 1vmin -1vmin 7vmin purple inset;
+  }
+
+  40% {
+    border-radius: 39% 61% 82% 18% / 74% 40% 60% 26%;
+  }
+
+  50% {
+    border-radius: 100%;
+    box-shadow: 0 2vmin 3vmin LightPink inset, 0 1vmin 4vmin MediumPurple inset,
+      0 2vmin 7vmin purple inset;
+  }
+
+  60% {
+    border-radius: 50% 50% 53% 47% / 72% 69% 31% 28%;
+  }
+
+  70% {
+    border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
+    box-shadow: 1vmin 1vmin 4vmin LightPink inset,
+      2vmin -1vmin 4vmin MediumPurple inset, -1vmin -1vmin 5vmin purple inset;
+  }
+
+  80% {
+    border-radius: 50% 50% 53% 47% / 26% 69% 31% 74%;
+  }
+
+  90% {
+    border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
+  }
 }
