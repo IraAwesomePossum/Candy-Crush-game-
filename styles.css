@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("images/bckg.jpeg");
+}
+.grid {
+  height: 560px;
+  width: 560px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 200;
+  right: 150;
+  background: RGBA(255, 255, 255, 0.1);
+  background: radial-gradient(
+    circle,
+    rgba(247, 245, 246, 0.7) 0%,
+    rgba(221, 224, 230, 0.7) 100%
+  );
+}
+
+.grid div {
+  height: 70px;
+  width: 70px;
+  transition: all 0.5s ease;
+}
+
+.score-board {
+  position: absolute;
+  top: 100;
+  left: 500;
+}
