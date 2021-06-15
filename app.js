@@ -6,8 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const width = 8;
   const squares = [];
   let score = 0;
+  const timeLeftDisplay = document.querySelector("span");
+
+  const startTimer = 5;
+  let time = startTimer * 60;
+  const startBtn = document.querySelector("#start");
+
   let audio = new Audio("fairy.wav");
   let audio1 = new Audio("whoosh.wav");
+  let gameover = new Audio("over.wav");
 
   const colors = [
     "url(images/brown.png)",
@@ -17,6 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
     "url(images/purple.png)",
     "url(images/yellow.png)",
   ];
+
+  //countdown
+
+  function countDown() {
+    setInterval(function () {
+      const minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+      seconds = seconds < 5 ? "0" + seconds : seconds;
+      timeLeftDisplay.innerHTML = `${minutes}:${seconds}`;
+      time--;
+      time = time < 0 ? 0 : time;
+      if (time === 0) {
+        gameover.play();
+      }
+    }, 1000);
+  }
+
+  startBtn.addEventListener("click", countDown);
 
   //Here I will create Board
   function createBoard() {

@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-image: url("images/bckg.jpeg");
   background-size: cover;
+  font-family: "Cherry Cream Soda", cursive;
 }
 .grid {
   height: 560px;
@@ -16,8 +17,9 @@ body {
   background: radial-gradient(
     circle,
     rgba(247, 245, 246, 0.7) 0%,
-    rgba(221, 224, 230, 0.7) 100%
+    rgba(246, 223, 235, 0.7) 100%
   );
+  border-radius: 10px;
 }
 
 .grid div {
@@ -37,25 +39,48 @@ body {
   filter: drop-shadow(0 0 3vmin Thistle) drop-shadow(0 5vmin 4vmin Orchid)
     drop-shadow(2vmin -2vmin 15vmin MediumSlateBlue)
     drop-shadow(0 0 7vmin MediumOrchid);
-  font-family: "Cherry Cream Soda", cursive;
+
   position: absolute;
   top: 200;
-  left: 200;
+  left: 150;
   min-width: 300px;
-  min-height: 300px;
+  min-height: 200px;
   text-align: center;
 }
 
+.timer {
+  animation: anim 30s infinite;
+  background: RGBA(255, 255, 255, 0.1);
+  background: radial-gradient(
+    circle,
+    rgba(247, 245, 246, 0.9) 0%,
+    rgba(221, 224, 230, 0.9) 100%
+  );
+  filter: drop-shadow(0 0 3vmin Thistle) drop-shadow(0 5vmin 4vmin Orchid)
+    drop-shadow(2vmin -2vmin 15vmin MediumSlateBlue)
+    drop-shadow(0 0 7vmin MediumOrchid);
+  text-align: center;
+  position: absolute;
+  min-width: 300px;
+  min-height: 200px;
+  top: 300;
+  left: 380;
+}
+
 h1 {
-  padding-top: 50px;
+  padding-top: 30px;
   color: #e93b81;
+}
+
+#score {
+  padding-top: 0px;
 }
 
 @keyframes anim {
   0%,
   100% {
     border-radius: 30% 70% 70% 30% / 30% 52% 48% 70%;
-    box-shadow: 0 -2vmin 3vmin LightPink inset, 0 1vmin 4vmin MediumPurple inset,
+    box-shadow: 0 -2vmin 3vmin #fbceb1 inset, 0 1vmin 4vmin MediumPurple inset,
       0 -2vmin 7vmin purple inset;
   }
 
@@ -89,7 +114,7 @@ h1 {
 
   70% {
     border-radius: 50% 50% 53% 47% / 26% 22% 78% 74%;
-    box-shadow: 1vmin 1vmin 4vmin LightPink inset,
+    box-shadow: 1vmin 1vmin 4vmin #c0e8d5 inset,
       2vmin -1vmin 4vmin MediumPurple inset, -1vmin -1vmin 5vmin purple inset;
   }
 
@@ -100,4 +125,59 @@ h1 {
   90% {
     border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
   }
+}
+
+video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  animation: anim 30s infinite;
+  position: fixed;
+  bottom: 300;
+  left: 350;
+
+  color: #005a8d;
+  padding: 20px;
+  max-width: 50%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#welcome {
+  padding-top: 0px;
+  color: #ff96ad;
+  text-align: center;
+}
+
+.startBtn {
+  font-size: 25px;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #ff96ad;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background-color: transparent;
+  font-family: "Cherry Cream Soda", cursive;
+  font-weight: 700;
+}
+.startBtnInternal {
+  font-size: 25px;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #ff96ad;
+  border-radius: 10px;
+  text-align: center;
+  color: #ff96ad;
+  background-color: transparent;
+  font-family: "Cherry Cream Soda", cursive;
+  font-weight: 700;
 }
