@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="score-board">
+      <h1>Score:</h1>
+      <h1 id="score"></h1>
+    </div>
+    <div class="timer">
+      <h1>Time: <span>5:00</span></h1>
+      <button id="start" class="startBtnInternal">Start</button>
+    </div>
+
+    <div class="grid"></div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Hey, still feel anxious?</p>
+        <p>Try this:</p>
+        <ul>
+          <li>Breathe in slowly to a count of four.</li>
+          <li>Hold the breath for a count of four.</li>
+          <li>Exhale slowly through pursed lips to a count of four.</li>
+          <li>Rest for a count of four (without taking any breaths).</li>
+          <li>Take two normal breaths. Start over again with number one.</li>
+        </ul>
+      </div>
+    </div>
+    <button class="refresh startBtnInternal">Play again?</button>
+    <script src="app.js"></script>
+  </body>
+</html>

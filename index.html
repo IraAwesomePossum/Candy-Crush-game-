@@ -11,32 +11,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="score-board">
-      <h1>Score:</h1>
-      <h1 id="score"></h1>
+    <audio src="space.mp3"></audio>
+    <video autoplay muted loop id="myVideo">
+      <source src="Galaxy_With_Customization (1).mp4" type="video/mp4" />
+    </video>
+    <div class="content">
+      <h1 id="welcome">Welcome to Space Candy Crush</h1>
+      <h2>
+        The purpose of this game is cognitive absorption — just take your mind
+        off whatever you're ruminating over for 5 minutes. There is no winning
+        or losing invloved.
+      </h2>
+      <a href="reality.html"><button class="startBtn">Reality 1</button></a>
+      <a href="second.html"><button class="startBtn">Reality 2</button></a>
     </div>
-    <div class="timer">
-      <h1>Time: <span>5:00</span></h1>
-      <button id="start" class="startBtnInternal">Start</button>
-    </div>
-
-    <div class="grid"></div>
-
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Hey, still feel anxious?</p>
-        <p>Try this:</p>
-        <ul>
-          <li>Breathe in slowly to a count of four.</li>
-          <li>Hold the breath for a count of four.</li>
-          <li>Exhale slowly through pursed lips to a count of four.</li>
-          <li>Rest for a count of four (without taking any breaths).</li>
-          <li>Take two normal breaths. Start over again with number one.</li>
-        </ul>
-      </div>
-    </div>
-    <button class="refresh startBtnInternal">Play again?</button>
-    <script src="app.js"></script>
+    <script src="landing.js"></script>
   </body>
 </html>
