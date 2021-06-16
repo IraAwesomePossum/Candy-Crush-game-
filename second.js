@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const squares = [];
   let score = 0;
   const timeLeftDisplay = document.querySelector("span");
+  let refreshBtn = document.querySelector(".refresh");
 
   const startTimer = 5;
   let time = startTimer * 60;
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //countdown
 
   function countDown() {
-    setInterval(function () {
+    let timer = setInterval(function () {
       space.play();
       const minutes = Math.floor(time / 60);
       let seconds = time % 60;
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       time = time < 0 ? 0 : time;
       if (time === 0) {
         modal.style.display = "block";
+        clearInterval(timer);
       }
     }, 1000);
   }
@@ -258,6 +260,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   checkColumn();
+
+  //refresh the page
+  refreshBtn.addEventListener("click", fresh);
+  function fresh() {
+    window.location.reload("Refresh");
+  }
 
   window.setInterval(function () {
     moveDown();

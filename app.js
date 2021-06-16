@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //countdown
 
   function countDown() {
-    setInterval(function () {
+    let timer = setInterval(function () {
       space.play();
       const minutes = Math.floor(time / 60);
       let seconds = time % 60;
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       time = time < 0 ? 0 : time;
       if (time === 0) {
         modal.style.display = "block";
+        clearInterval(timer);
       }
     }, 1000);
   }
