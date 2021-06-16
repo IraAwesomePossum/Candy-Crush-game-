@@ -1,5 +1,3 @@
-//Telling to read my HTML before it reads JS file, a more fool proof way to ensure order
-
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const scoreDisplay = document.getElementById("score");
@@ -7,14 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const squares = [];
   let score = 0;
   const timeLeftDisplay = document.querySelector("span");
-  let refreshBtn = document.querySelector(".refresh");
 
-  const startTimer = 1;
+  const startTimer = 5;
   let time = startTimer * 60;
   const startBtn = document.querySelector("#start");
 
   let modal = document.getElementById("myModal");
-  let span = document.getElementsByClassName("close")[0];
+  var span = document.getElementsByClassName("close")[0];
 
   let audio = new Audio("fairy.wav");
   let audio1 = new Audio("whoosh.wav");
@@ -22,12 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let space = new Audio("space.mp3");
 
   const colors = [
-    "url(images/brown.png)",
-    "url(images/green.png)",
-    "url(images/blue.png)",
-    "url(images/red.png)",
-    "url(images/purple.png)",
-    "url(images/yellow.png)",
+    "url(images/rick.png)",
+    "url(images/jerry.png)",
+    "url(images/snuffles.png)",
+    "url(images/squanchy.png)",
+    "url(images/pickleRick.png)",
+    "url(images/morty.png)",
   ];
 
   //countdown
@@ -48,8 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   startBtn.addEventListener("click", countDown);
-
-  //Modal window
 
   span.onclick = function () {
     modal.style.display = "none";
@@ -263,12 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   checkColumn();
-
-  //refresh the page
-  refreshBtn.addEventListener("click", fresh);
-  function fresh() {
-    window.location.reload("Refresh");
-  }
 
   window.setInterval(function () {
     moveDown();

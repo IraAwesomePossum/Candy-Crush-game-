@@ -28,6 +28,15 @@ body {
   transition: all 0.5s ease;
 }
 
+audio {
+  position: absolute;
+  opacity: 0.7;
+  filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);
+  width: 200px;
+  height: 25px;
+  z-index: 50;
+}
+
 .score-board {
   animation: anim 30s infinite;
   background: RGBA(255, 255, 255, 0.1);
@@ -48,6 +57,10 @@ body {
   text-align: center;
 }
 
+.score-board:hover {
+  z-index: 5;
+}
+
 .timer {
   animation: anim 30s infinite;
   background: RGBA(255, 255, 255, 0.1);
@@ -65,6 +78,10 @@ body {
   min-height: 200px;
   top: 300;
   left: 380;
+  z-index: 7;
+}
+.score-board:hover {
+  z-index: 66;
 }
 
 h1 {
@@ -139,8 +156,8 @@ video {
   position: fixed;
   bottom: 300;
   left: 350;
-
-  color: #005a8d;
+  background-color: rgba(82, 97, 107, 0.8);
+  color: white;
   padding: 20px;
   max-width: 50%;
   text-align: center;
@@ -180,4 +197,65 @@ video {
   background-color: transparent;
   font-family: "Cherry Cream Soda", cursive;
   font-weight: 700;
+}
+
+.refresh {
+  animation: anim 30s infinite;
+  background: RGBA(255, 255, 255, 0.1);
+  background: radial-gradient(
+    circle,
+    rgba(247, 245, 246, 0.9) 0%,
+    rgba(221, 224, 230, 0.9) 100%
+  );
+  filter: drop-shadow(0 0 3vmin Thistle) drop-shadow(0 5vmin 4vmin Orchid)
+    drop-shadow(2vmin -2vmin 15vmin MediumSlateBlue)
+    drop-shadow(0 0 7vmin MediumOrchid);
+  min-width: 200px;
+  min-height: 150px;
+  position: absolute;
+  top: 350;
+  left: 150;
+  transition: all ease;
+}
+
+.refresh:hover {
+  z-index: 8888;
+}
+
+/* modal window */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  font-size: 20px;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 10%;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
